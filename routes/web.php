@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Route::group(['namespace'=>'Weapp','prefix'=>'index'], function($router){
+//    $router->any('index', 'IndexController@index')->name('index.index');
+//});
+
+Route::group(['namespace'=>'Weapp'], function($router){
+    $router->any('index/index', 'IndexController@index')->name('index.index');
+});
