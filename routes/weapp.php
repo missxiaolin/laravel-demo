@@ -21,5 +21,9 @@ Route::get('/', function () {
 
 Route::group([], function($router){
     $router->any('index/index', 'IndexController@index')->name('index.index');
+
+    // 文件上传
     $router->any('index/upload', 'IndexController@upload')->name('index.upload');
+    // 发送邮件
+    $router->any('index/mail', 'IndexController@mail')->name('index.upload');
 });

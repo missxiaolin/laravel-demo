@@ -7,6 +7,7 @@ use App\Libs\LadpClient;
 use App\Src\web\model\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 class IndexController extends Controller
@@ -47,5 +48,23 @@ class IndexController extends Controller
             dump($file);
         }
         return view('weapp.index.upload');
+    }
+
+    /**
+     * 邮件发送
+     */
+    public function mail()
+    {
+        // 方法1
+//        Mail::raw('邮件内容',function ($message){
+//            $message->from('17135501105@163.com','小林');
+//            $message->subject('邮件主题测试');
+//            $message->to('462441355@qq.com');
+//        });
+
+        // 方法2
+        Mail::send('weapp.email.mail',['name'=>'sean'],function ($message){
+            $message->to('462441355@qq.com');
+        });
     }
 }
