@@ -19,6 +19,7 @@ Route::get('/', function () {
 //    $router->any('index', 'IndexController@index')->name('index.index');
 //});
 
-Route::group(['namespace'=>'Weapp'], function($router){
+Route::group([], function($router){
     $router->any('index/index', 'IndexController@index')->name('index.index');
+    $router->any('index/upload', 'IndexController@upload')->name('index.upload');
 });
