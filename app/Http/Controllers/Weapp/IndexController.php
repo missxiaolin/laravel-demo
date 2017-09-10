@@ -7,7 +7,9 @@ use App\Libs\LadpClient;
 use App\Src\web\model\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Storage;
 
 class IndexController extends Controller
@@ -63,8 +65,22 @@ class IndexController extends Controller
 //        });
 
         // 方法2
-        Mail::send('weapp.email.mail',['name'=>'sean'],function ($message){
+        Mail::send('weapp.email.mail', ['name' => 'sean'], function ($message) {
             $message->to('462441355@qq.com');
         });
+    }
+
+    /**
+     * 缓存的使用
+     */
+    public function useCache()
+    {
+//        Redis::sadd('key1', 'val1');
+//        dump(Redis::smembers('key1'));
+//        Redis::set('a',1);
+//        dump(Redis::get('a'));
+//        Cache::put('key1', 'val1', 10);
+//        $key1 = Cache::get('key1');
+//        dump($key1);
     }
 }

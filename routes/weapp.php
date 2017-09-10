@@ -26,4 +26,6 @@ Route::group([], function($router){
     $router->any('index/upload', 'IndexController@upload')->name('index.upload');
     // 发送邮件
     $router->any('index/mail', 'IndexController@mail')->name('index.upload');
+    // 缓存的使用
+    $router->any('index/cache', 'IndexController@useCache')->name('index.cache');
 });
