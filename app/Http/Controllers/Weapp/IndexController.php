@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Weapp;
 
+use App\Jobs\SendEmail;
 use App\Jobs\SMS\sms;
 use App\Libs\LadpClient;
 use App\Src\web\model\User;
@@ -19,6 +20,7 @@ class IndexController extends Controller
 //        $seconds = 5;
 //        $job = (new sms('1711111'))->delay(Carbon::now()->addSeconds($seconds));
 //        dispatch($job);
+        dispatch(new SendEmail('944050840@qq.com'));
     }
 
     /**
@@ -75,6 +77,9 @@ class IndexController extends Controller
      */
     public function useCache()
     {
+        for ($i = 0;$i < 150; $i++){
+            dispatch(new SendEmail('944050840@qq.com'));
+        }
 //        Redis::sadd('key1', 'val1');
 //        dump(Redis::smembers('key1'));
 //        Redis::set('a',1);
