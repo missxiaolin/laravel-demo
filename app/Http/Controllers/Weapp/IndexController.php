@@ -20,7 +20,8 @@ class IndexController extends Controller
 //        $seconds = 5;
 //        $job = (new sms('1711111'))->delay(Carbon::now()->addSeconds($seconds));
 //        dispatch($job);
-        dispatch(new SendEmail('944050840@qq.com'));
+//        dispatch(new SendEmail('944050840@qq.com'));
+        return $this->view('weapp.index.index');
     }
 
     /**
