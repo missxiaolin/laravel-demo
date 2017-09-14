@@ -46,12 +46,10 @@ class IndexController extends Controller
                 $fileName = date('Y-m-d-H-i-s') . '-' . uniqid() . '.' . $ext;
 
                 $bool = Storage::disk('uploads')->put($fileName, file_get_contents($realPath));
-                dump($bool);
 
             }
-            dump($file);
         }
-        return view('weapp.index.upload');
+        return $this->view('weapp.index.upload');
     }
 
     /**
