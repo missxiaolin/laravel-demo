@@ -1,32 +1,49 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <meta name="description" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="yes" name="apple-touch-fullscreen"/>
+    <meta content="telephone=no,email=no" name="format-detection"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+    <title>{!! $title or ''!!}</title>
+
     <meta name="author" content="">
-    {{--<meta name="csrf-token" content="{{ csrf_token() }}">--}}
-
-
-    <title>小林</title>
+    <meta name="Keywords" content="{!!$meta_keyword or ''!!}"/>
+    <meta name="Description" content="{!!$meta_description or ''!!}"/>
 
 </head>
 
 <body>
 
-<div class="container">
+<div class="page">
+    {{--@section('navbar')--}}
+        {{--@include('partials.navbar')--}}
+    {{--@show--}}
 
-    <div class="blog-header">
+    {{-- content --}}
+    <div class="content-wrapper">
+        @yield('content')
     </div>
+    <div class="network-status"></div>
+</div>
 
-    <div class="row">
-        @yield("content")
 
-    </div><!-- /.row -->
-</div><!-- /.container -->
-
-@yield("pagejs")
+@if (isset($file_css) && $file_css)
+    <style></style>
+    <link href="{!! isset($host) ? $host : ''!!}/{!!$file_css!!}.css"
+          rel="stylesheet"/>
+@endif
+<script src="{!! isset($host) ? $host : ''!!}/js/lib/require.js"></script>
+<script src="{!! isset($host) ? $host : ''!!}/js/lib/config.js"></script>
+<script>
+    define('page.params', function () {
+        return {!!json_encode( \App\Http\Controllers\Resource::getAllParams())!!};
+    });
+</script>
+@if (isset($file_js) && $file_js)
+    <script src="{!! isset($host) ? $host : ''!!}/{!!$file_js!!}.js"></script>
+@endif
 </body>
 </html>

@@ -17,6 +17,10 @@ class IndexController extends Controller
 {
     public function index()
     {
+        $this->title = '首页';
+        $this->file_css = 'css/index/index';
+        $this->file_js = 'pages/index/index';
+//        $this->js
 //        $seconds = 5;
 //        $job = (new sms('1711111'))->delay(Carbon::now()->addSeconds($seconds));
 //        dispatch($job);
