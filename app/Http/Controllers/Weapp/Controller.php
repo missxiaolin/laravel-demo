@@ -27,6 +27,7 @@ class Controller extends BaseController
                 'debug' => config('page.debug'),
                 'title' => $this->title,
                 'host' => config('page.host'),
+                'base_url' => config('page.host') . '/js',
                 'file_css' => $this->file_css,
                 'file_js' => $this->file_js,
             ),

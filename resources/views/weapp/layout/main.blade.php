@@ -32,18 +32,25 @@
 
 @if (isset($file_css) && $file_css)
     <style></style>
-    <link href="{!! isset($host) ? $host : ''!!}/{!!$file_css!!}.css"
+    <link href="{!! isset($host) ? $host : ''!!}/{!!$file_css!!}.css?v= {{ time() }})"
           rel="stylesheet"/>
 @endif
 <script src="{!! isset($host) ? $host : ''!!}/js/lib/require.js"></script>
 <script src="{!! isset($host) ? $host : ''!!}/js/lib/config.js"></script>
 <script>
+    require.config({
+        @if ($debug)
+        waitSeconds: 0,
+        urlArgs: "v=" + (new Date()).getTime(),
+        @endif
+        baseUrl: '{!!$base_url!!}'
+    });
     define('page.params', function () {
         return {!!json_encode( \App\Http\Controllers\Resource::getAllParams())!!};
     });
 </script>
 @if (isset($file_js) && $file_js)
-    <script src="{!! isset($host) ? $host : ''!!}/{!!$file_js!!}.js"></script>
+    <script src="{!! isset($host) ? $host : ''!!}/{!!$file_js!!}.js?v= {{ time() }}"></script>
 @endif
 </body>
 </html>
