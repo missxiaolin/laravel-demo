@@ -1,10 +1,6 @@
 {
     "modules": [
         {
-            "src": "a/a",
-            "dest": "a"
-        },
-        {
             "src": "product/index",
             "dest": "product"
         }

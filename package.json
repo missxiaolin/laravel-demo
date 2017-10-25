@@ -23,11 +23,13 @@
     "vue": "^2.1.10"
   },
   "dependencies": {
-      "crypto": "0.0.3",
-      "qiniu": "^6.1.13",
-      "v-distpicker": "^0.1.7",
-      "vue-baidu-map": "^0.10.7",
-      "vue-core-image-upload": "^2.2.4",
-      "vue-easy-slider": "^3.1.0"
+    "cross-env": "^3.2.4",
+    "crypto": "0.0.3",
+    "laravel-mix": "^0.12.1",
+    "qiniu": "^6.1.13",
+    "v-distpicker": "^0.1.7",
+    "vue-baidu-map": "^0.10.7",
+    "vue-core-image-upload": "^2.2.4",
+    "vue-easy-slider": "^3.1.0"
   }
 }
