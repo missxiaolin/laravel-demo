@@ -173,6 +173,7 @@ return [
          */
         Huifang\Admin\Providers\AppServiceProvider::class,
         Huifang\Admin\Providers\AuthServiceProvider::class,
+        App\Ufa\Providers\UfaServiceProvider::class,
 //        Huifang\Admin\Providers\BroadcastServiceProvider::class,
         Huifang\Admin\Providers\EventServiceProvider::class,
         Huifang\Admin\Providers\RouteServiceProvider::class,

@@ -1,0 +1,8 @@
+{
+    "modules": [
+        {
+            "src": "auth/login",
+            "dest": "auth"
+        }
+    ]
+}

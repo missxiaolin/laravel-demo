@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// 登录相关
+Route::get('/login', ['as' => 'login', 'uses' => 'Auth\LoginController@showLoginForm']);
+
 Route::group([], function($router){
     $router->any('home/index', 'HomeController@index')->name('home.index');
 });

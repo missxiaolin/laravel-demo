@@ -6,6 +6,7 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
+        "app/ufa": "dev-master",
         "barryvdh/laravel-ide-helper": "^2.4",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
@@ -53,5 +54,15 @@
     "config": {
         "preferred-install": "dist",
         "sort-packages": true
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        },
+        "ufa": {
+            "type": "git",
+            "url": "git@github.com:missxiaolin/ufa.git"
+        }
     }
 }

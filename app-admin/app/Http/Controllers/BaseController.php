@@ -4,6 +4,11 @@ namespace Huifang\Admin\Http\Controllers;
 
 class BaseController extends Controller
 {
+    /**
+     * @param $view
+     * @param array $data
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     protected function view($view, $data = array())
     {
         $data = array_merge(
