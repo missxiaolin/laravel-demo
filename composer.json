@@ -27,6 +27,7 @@
         ],
         "psr-4": {
             "Huifang\\Web\\": "app-web/app/",
+            "Huifang\\Admin\\": "app-admin/app/",
             "Huifang\\": "core/app/"
         }
     },
@@ -34,18 +35,19 @@
     },
     "scripts": {
         "post-root-package-install": [
-            "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+            "php -r \"copy('.env.example', '.env');\"",
+            "php -r \"symlink('../.env', 'app-web/.env');\"",
+            "php -r \"symlink('../.env', 'app-admin/.env');\""
         ],
         "post-create-project-cmd": [
-            "php artisan key:generate"
         ],
         "post-install-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postInstall",
-            "php artisan optimize"
+            "php app-web/artisan clear-compiled",
+            "php app-admin/artisan clear-compiled"
         ],
         "post-update-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-            "php artisan optimize"
+            "php app-web/artisan clear-compiled",
+            "php app-admin/artisan clear-compiled"
         ]
     },
     "config": {
