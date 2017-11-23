@@ -17,4 +17,6 @@ Route::get('/', function () {
 
 Route::group([], function($router){
     $router->any('home/index', 'HomeController@index')->name('home.index');
+    $router->any('home/upload', 'HomeController@upload')->name('home.upload');
+    $router->any('home/mail', 'HomeController@mail')->name('home.mail');
 });

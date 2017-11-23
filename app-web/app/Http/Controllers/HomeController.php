@@ -2,6 +2,8 @@
 namespace Huifang\Web\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 
 
 class HomeController extends BaseController
@@ -40,7 +42,25 @@ class HomeController extends BaseController
 
             }
         }
-        return $this->view('weapp.index.upload');
+        return $this->view('home.upload');
+    }
+
+    /**
+     * 邮件发送
+     */
+    public function mail()
+    {
+        // 方法1
+        Mail::raw('邮件内容',function ($message){
+            $message->from('17135501105@163.com','小林');
+            $message->subject('邮件主题测试');
+            $message->to('462441355@qq.com');
+        });
+
+        // 方法2
+//        Mail::send('email.mail', ['name' => 'sean'], function ($message) {
+//            $message->to('462441355@qq.com');
+//        });
     }
 
 }
