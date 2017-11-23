@@ -1,6 +1,7 @@
 <?php
 namespace Huifang\Web\Http\Controllers;
 
+use Huifang\Web\Jobs\SendEmail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
@@ -61,6 +62,23 @@ class HomeController extends BaseController
 //        Mail::send('email.mail', ['name' => 'sean'], function ($message) {
 //            $message->to('462441355@qq.com');
 //        });
+    }
+
+    /**
+     * 缓存的使用
+     */
+    public function useCache()
+    {
+        for ($i = 0;$i < 1; $i++){
+            dispatch(new SendEmail('462441355@qq.com'));
+        }
+//        Redis::sadd('key1', 'val1');
+//        dump(Redis::smembers('key1'));
+//        Redis::set('a',1);
+//        dump(Redis::get('a'));
+//        Cache::put('key1', 'val1', 10);
+//        $key1 = Cache::get('key1');
+//        dump($key1);
     }
 
 }
