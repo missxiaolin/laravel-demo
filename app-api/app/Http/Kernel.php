@@ -56,5 +56,6 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \Huifang\Api\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'auth.api' => \Huifang\Api\Http\Middleware\ApiAuth::class,
     ];
 }
