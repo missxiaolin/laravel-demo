@@ -26,6 +26,9 @@
         "classmap": [
             "core/database"
         ],
+        "files": [
+            "core/Support/helpers.php"
+        ],
         "psr-4": {
             "Huifang\\Web\\": "app-web/app/",
             "Huifang\\Admin\\": "app-admin/app/",
