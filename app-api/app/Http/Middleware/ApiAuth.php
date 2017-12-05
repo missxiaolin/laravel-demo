@@ -3,6 +3,7 @@
 namespace Huifang\Api\Http\Middleware;
 
 use Closure;
+use Huifang\Src\user\service\UserService;
 
 class ApiAuth
 {
