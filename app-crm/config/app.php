@@ -64,7 +64,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'PRC',
 
     /*
     |--------------------------------------------------------------------------
@@ -77,7 +77,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'zh_CN',
 
     /*
     |--------------------------------------------------------------------------
@@ -176,6 +176,7 @@ return [
 //        Huifang\Crm\Providers\BroadcastServiceProvider::class,
         Huifang\Crm\Providers\EventServiceProvider::class,
         Huifang\Crm\Providers\RouteServiceProvider::class,
+        Encore\Admin\Providers\AdminServiceProvider::class
 
     ],
 
