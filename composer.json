@@ -34,6 +34,7 @@
         "psr-4": {
             "Huifang\\Web\\": "app-web/app/",
             "Huifang\\Admin\\": "app-admin/app/",
+            "Huifang\\Crm\\": "app-crm/app/",
             "Huifang\\Api\\": "app-api/app/",
             "Huifang\\": "core/app/"
         }
@@ -45,19 +46,22 @@
             "php -r \"copy('.env.example', '.env');\"",
             "php -r \"symlink('../.env', 'app-web/.env');\"",
             "php -r \"symlink('../.env', 'app-admin/.env');\"",
-            "php -r \"symlink('../.env', 'app-api/.env');\""
+            "php -r \"symlink('../.env', 'app-api/.env');\"",
+            "php -r \"symlink('../.env', 'app-crm/.env');\""
         ],
         "post-create-project-cmd": [
         ],
         "post-install-cmd": [
             "php app-web/artisan clear-compiled",
             "php app-admin/artisan clear-compiled",
-            "php app-api/artisan clear-compiled"
+            "php app-api/artisan clear-compiled",
+            "php app-crm/artisan clear-compiled"
         ],
         "post-update-cmd": [
             "php app-web/artisan clear-compiled",
             "php app-admin/artisan clear-compiled",
-            "php app-api/artisan clear-compiled"
+            "php app-api/artisan clear-compiled",
+            "php app-crm/artisan clear-compiled"
         ]
     },
     "config": {
